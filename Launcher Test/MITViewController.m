@@ -18,9 +18,12 @@
 {
     [super viewDidLoad];
     
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     MITCollectionViewGridLayout *gridLayout = (MITCollectionViewGridLayout*)self.collectionView.collectionViewLayout;
     gridLayout.minimumInterItemSpacingX = 10.;
     gridLayout.minimumInterItemSpacingY = 10.;
+    gridLayout.referenceHeaderHeight = 48.;
+    gridLayout.referenceFooterHeight = 48.;
     
     
     [self.collectionView registerClass:[UICollectionViewCell class]
@@ -36,7 +39,7 @@
 
     
     NSMutableArray *viewContent = [[NSMutableArray alloc] init];
-    NSUInteger colorDelta = 4;
+    NSUInteger colorDelta = 8;
     
     for (int i = 0; i < (colorDelta * 3); ++i) {
         CGFloat channel = 1. / ((i % colorDelta) + 1.);
@@ -44,7 +47,7 @@
         switch (i / colorDelta) {
             case 0:
                 [viewContent addObject:[UIColor colorWithRed:channel
-                                                       green:0
+                                                       green:1. - channel
                                                         blue:0
                                                        alpha:1]];
                 break;
@@ -100,12 +103,12 @@
 {
     UICollectionReusableView *reusableView = nil;
     
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+    if ([kind isEqualToString:MITCollectionKindSectionHeader]) {
         reusableView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                withReuseIdentifier:@"HeaderView"
                                                                       forIndexPath:indexPath];
         reusableView.backgroundColor = [UIColor purpleColor];
-    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+    } else if ([kind isEqualToString:MITCollectionKindSectionFooter]) {
         reusableView = [self.collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                                withReuseIdentifier:@"FooterView"
                                                                       forIndexPath:indexPath];
