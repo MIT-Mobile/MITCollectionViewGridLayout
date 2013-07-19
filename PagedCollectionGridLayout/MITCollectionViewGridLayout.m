@@ -8,6 +8,13 @@
 
 #import "MITCollectionViewGridLayout.h"
 
+typedef struct {
+    CGFloat spacing;
+    NSUInteger numberOfItems;
+} MITAxisGridLayout;
+
+const MITAxisGridLayout MITAxisGridLayoutZero = {.spacing = 0., .numberOfItems = 0};
+
 NSString* const MITCollectionKindSectionHeader = @"MITCollectionKindSectionHeader";  // @{<key> : UICollectionViewLayoutAttributes}
 NSString* const MITCollectionKindSectionFooter = @"MITCollectionKindSectionFooter";  // @{<key> : UICollectionViewLayoutAttributes}
 NSString* const MITCollectionKindCellBadge = @"MITCollectionKindItemBadge";          // @{<key> : @{ NSIndexPath : UICollectionViewLayoutAttributes}}
@@ -112,27 +119,12 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
                                      MIN(_referenceItemSize.height,CGRectGetHeight(contentBounds)));
         
         
-        NSUInteger numberOfItemsPerRow = [self numberOfItemsInDimension:CGRectGetWidth(contentBounds)
-                                                          itemDimension:itemSize.width
-                                                       interItemPadding:_minimumInterItemSpacingX];
-        CGFloat interItemSpacingX = 0;
-        if (numberOfItemsPerRow > 1) {
-            interItemSpacingX = floor((CGRectGetWidth(contentBounds) -
-                                 (numberOfItemsPerRow * itemSize.width)) /
-                                (numberOfItemsPerRow - 1));
-        }
-        
-        NSUInteger numberOfItemsPerColumn = [self numberOfItemsInDimension:CGRectGetHeight(contentBounds)
-                                                             itemDimension:itemSize.height
-                                                          interItemPadding:_minimumInterItemSpacingY];
-        CGFloat interItemSpacingY = 0;
-        if (numberOfItemsPerColumn > 1) {
-            interItemSpacingY = floor((CGRectGetHeight(contentBounds) -
-                                 (numberOfItemsPerColumn * itemSize.height)) /
-                                (numberOfItemsPerColumn - 1));
-        }
-
-        
+        MITAxisGridLayout horizontalLayout = [self axisGridLayoutForWidth:CGRectGetWidth(contentBounds)
+                                                                itemWidth:itemSize.width
+                                                         interItemSpacing:_minimumInterItemSpacing.width];
+        MITAxisGridLayout verticalLayout = [self axisGridLayoutForWidth:CGRectGetHeight(contentBounds)
+                                                              itemWidth:itemSize.height
+                                                       interItemSpacing:_minimumInterItemSpacing.height];
         NSUInteger pageCount = 0;
         NSUInteger numberOfSections = [self.collectionView numberOfSections];
         
@@ -141,8 +133,8 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
             CGPoint frameOrigin = CGPointZero;
             
             for (NSUInteger item = 0; item < numberOfItemsInSection; ++item) {
-                NSUInteger column = item % numberOfItemsPerRow;
-                NSUInteger row = (item / numberOfItemsPerRow) % numberOfItemsPerColumn;
+                NSUInteger column = item % horizontalLayout.numberOfItems;
+                NSUInteger row = (item / horizontalLayout.numberOfItems) % verticalLayout.numberOfItems;
 
                 if ((row == 0) && (column == 0)) {
                     frameOrigin.x = (pageCount * _cachedPageSize.width);
@@ -150,8 +142,8 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
                     ++pageCount;
                 }
                 
-                CGPoint cellOrigin = CGPointMake(column * (itemSize.width + interItemSpacingX),
-                                                 row * (itemSize.height + interItemSpacingY));
+                CGPoint cellOrigin = CGPointMake(column * (itemSize.width + horizontalLayout.spacing),
+                                                 row * (itemSize.height + verticalLayout.spacing));
                 cellOrigin.x += CGRectGetMinX(contentBounds) + frameOrigin.x;
                 cellOrigin.y += CGRectGetMinY(contentBounds) + frameOrigin.y;
                 
@@ -174,21 +166,55 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
     }
 }
 
-- (NSUInteger)numberOfItemsInDimension:(CGFloat)maxDimension
-                         itemDimension:(CGFloat)itemDimension
-                      interItemPadding:(CGFloat)padding
+- (MITAxisGridLayout)axisGridLayoutForWidth:(CGFloat)maxWidth
+                                  itemWidth:(CGFloat)itemWidth
+                           interItemSpacing:(CGFloat)spacing
 {
-    CGFloat numberOfItems = ceil(maxDimension / itemDimension);
-    CGFloat calculatedSize = numberOfItems * itemDimension;
-    CGFloat calculatedPadding = 0;
+    MITAxisGridLayout layout = MITAxisGridLayoutZero;
     
-    while ((calculatedSize > maxDimension) || (calculatedPadding < padding)) {
-        --numberOfItems;
-        calculatedPadding = round((maxDimension - (numberOfItems * itemDimension)) / (numberOfItems - 1.));
-        calculatedSize = (numberOfItems * itemDimension) + (MAX(numberOfItems - 1,0) * calculatedPadding);
+    CGFloat numberOfItems = (maxWidth + spacing) / (itemWidth + spacing);
+    numberOfItems = floor(numberOfItems);
+    
+    CGFloat (^proposedWidth)(CGFloat,CGFloat,CGFloat) = ^(CGFloat numberOfItems, CGFloat itemWidth, CGFloat spacing) {
+        return (numberOfItems * (itemWidth + spacing)) - spacing;
+    };
+    
+    CGFloat currentWidth = proposedWidth(numberOfItems, itemWidth, spacing);
+    CGFloat actualSpacing = spacing;
+    
+    BOOL stop = NO;
+    while (!stop) {
+        CGFloat nextWidth = proposedWidth(numberOfItems + 1, itemWidth, actualSpacing);
+        
+        if ((maxWidth - currentWidth ) < 0) {
+            --numberOfItems;
+            nextWidth = currentWidth;
+            currentWidth = proposedWidth(numberOfItems, itemWidth, actualSpacing);
+        } else if ((nextWidth - maxWidth) > 1.) {
+            layout.numberOfItems = (NSUInteger)(floor(numberOfItems));
+            stop = YES;
+        } else {
+            currentWidth = nextWidth;
+            ++numberOfItems;
+        }
     }
     
-    return numberOfItems;
+    stop = NO;
+    currentWidth = proposedWidth(numberOfItems, itemWidth, actualSpacing);
+    while (!stop) {
+        CGFloat nextWidth = proposedWidth(numberOfItems, itemWidth, actualSpacing + 1);
+        
+        if ((maxWidth - nextWidth) < 1) {
+            layout.spacing = floor(actualSpacing);
+            stop = YES;
+        } else {
+            actualSpacing += (spacing / numberOfItems);
+        }
+        
+        currentWidth = nextWidth;
+    }
+    
+    return layout;
 }
 
 - (CGSize)collectionViewContentSize

@@ -21,7 +21,7 @@
 		2CD6EEA41794A75D0008F560 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EE831794A75D0008F560 /* Foundation.framework */; };
 		2CD6EEA51794A75D0008F560 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EE871794A75D0008F560 /* UIKit.framework */; };
 		2CD6EEAD1794A75D0008F560 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */; };
-		2CD6EEAF1794A75D0008F560 /* Launcher_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAE1794A75D0008F560 /* Launcher_TestTests.m */; };
+		2CD6EEAF1794A75D0008F560 /* PagedCollectionGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,25 +37,25 @@
 /* Begin PBXFileReference section */
 		2C5F9CFE17985990001E05E5 /* MITCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITCollectionViewGridLayout.h; sourceTree = "<group>"; };
 		2C5F9CFF17985990001E05E5 /* MITCollectionViewGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITCollectionViewGridLayout.m; sourceTree = "<group>"; };
-		2CD6EE801794A75D0008F560 /* Launcher Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Launcher Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagedCollectionGridLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD6EE831794A75D0008F560 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2CD6EE851794A75D0008F560 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2CD6EE871794A75D0008F560 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2CD6EE8B1794A75D0008F560 /* Launcher Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Launcher Test-Info.plist"; sourceTree = "<group>"; };
+		2CD6EE8B1794A75D0008F560 /* PagedCollectionGridLayout-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedCollectionGridLayout-Info.plist"; sourceTree = "<group>"; };
 		2CD6EE8D1794A75D0008F560 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD6EE8F1794A75D0008F560 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2CD6EE911794A75D0008F560 /* Launcher Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Launcher Test-Prefix.pch"; sourceTree = "<group>"; };
+		2CD6EE911794A75D0008F560 /* PagedCollectionGridLayout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PagedCollectionGridLayout-Prefix.pch"; sourceTree = "<group>"; };
 		2CD6EE921794A75D0008F560 /* MITAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MITAppDelegate.h; sourceTree = "<group>"; };
 		2CD6EE931794A75D0008F560 /* MITAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MITAppDelegate.m; sourceTree = "<group>"; };
 		2CD6EE961794A75D0008F560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD6EE981794A75D0008F560 /* MITViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MITViewController.h; sourceTree = "<group>"; };
 		2CD6EE991794A75D0008F560 /* MITViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MITViewController.m; sourceTree = "<group>"; };
 		2CD6EE9B1794A75D0008F560 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2CD6EEA11794A75D0008F560 /* Launcher TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Launcher TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagedCollectionGridLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD6EEA21794A75D0008F560 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2CD6EEAA1794A75D0008F560 /* Launcher TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Launcher TestTests-Info.plist"; sourceTree = "<group>"; };
+		2CD6EEAA1794A75D0008F560 /* PagedCollectionGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedCollectionGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		2CD6EEAC1794A75D0008F560 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2CD6EEAE1794A75D0008F560 /* Launcher_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Launcher_TestTests.m; sourceTree = "<group>"; };
+		2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagedCollectionGridLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 		2CD6EE771794A75D0008F560 = {
 			isa = PBXGroup;
 			children = (
-				2CD6EE891794A75D0008F560 /* Launcher Test */,
-				2CD6EEA81794A75D0008F560 /* Launcher TestTests */,
+				2CD6EE891794A75D0008F560 /* Paged Collection Grid Layout */,
+				2CD6EEA81794A75D0008F560 /* Paged Collection Grid Layout Tests */,
 				2CD6EE821794A75D0008F560 /* Frameworks */,
 				2CD6EE811794A75D0008F560 /* Products */,
 			);
@@ -95,8 +95,8 @@
 		2CD6EE811794A75D0008F560 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CD6EE801794A75D0008F560 /* Launcher Test.app */,
-				2CD6EEA11794A75D0008F560 /* Launcher TestTests.xctest */,
+				2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */,
+				2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +112,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CD6EE891794A75D0008F560 /* Launcher Test */ = {
+		2CD6EE891794A75D0008F560 /* Paged Collection Grid Layout */ = {
 			isa = PBXGroup;
 			children = (
 				2CD6EE921794A75D0008F560 /* MITAppDelegate.h */,
@@ -125,33 +125,35 @@
 				2CD6EE9B1794A75D0008F560 /* Images.xcassets */,
 				2CD6EE8A1794A75D0008F560 /* Supporting Files */,
 			);
+			name = "Paged Collection Grid Layout";
 			path = "Launcher Test";
 			sourceTree = "<group>";
 		};
 		2CD6EE8A1794A75D0008F560 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2CD6EE8B1794A75D0008F560 /* Launcher Test-Info.plist */,
+				2CD6EE8B1794A75D0008F560 /* PagedCollectionGridLayout-Info.plist */,
 				2CD6EE8C1794A75D0008F560 /* InfoPlist.strings */,
 				2CD6EE8F1794A75D0008F560 /* main.m */,
-				2CD6EE911794A75D0008F560 /* Launcher Test-Prefix.pch */,
+				2CD6EE911794A75D0008F560 /* PagedCollectionGridLayout-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2CD6EEA81794A75D0008F560 /* Launcher TestTests */ = {
+		2CD6EEA81794A75D0008F560 /* Paged Collection Grid Layout Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2CD6EEAE1794A75D0008F560 /* Launcher_TestTests.m */,
+				2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */,
 				2CD6EEA91794A75D0008F560 /* Supporting Files */,
 			);
+			name = "Paged Collection Grid Layout Tests";
 			path = "Launcher TestTests";
 			sourceTree = "<group>";
 		};
 		2CD6EEA91794A75D0008F560 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2CD6EEAA1794A75D0008F560 /* Launcher TestTests-Info.plist */,
+				2CD6EEAA1794A75D0008F560 /* PagedCollectionGridLayoutTests-Info.plist */,
 				2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -160,9 +162,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CD6EE7F1794A75D0008F560 /* Launcher Test */ = {
+		2CD6EE7F1794A75D0008F560 /* PagedCollectionGridLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD6EEB21794A75D0008F560 /* Build configuration list for PBXNativeTarget "Launcher Test" */;
+			buildConfigurationList = 2CD6EEB21794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayout" */;
 			buildPhases = (
 				2CD6EE7C1794A75D0008F560 /* Sources */,
 				2CD6EE7D1794A75D0008F560 /* Frameworks */,
@@ -172,14 +174,14 @@
 			);
 			dependencies = (
 			);
-			name = "Launcher Test";
+			name = PagedCollectionGridLayout;
 			productName = "Launcher Test";
-			productReference = 2CD6EE801794A75D0008F560 /* Launcher Test.app */;
+			productReference = 2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CD6EEA01794A75D0008F560 /* Launcher TestTests */ = {
+		2CD6EEA01794A75D0008F560 /* PagedCollectionGridLayoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "Launcher TestTests" */;
+			buildConfigurationList = 2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayoutTests" */;
 			buildPhases = (
 				2CD6EE9D1794A75D0008F560 /* Sources */,
 				2CD6EE9E1794A75D0008F560 /* Frameworks */,
@@ -190,9 +192,9 @@
 			dependencies = (
 				2CD6EEA71794A75D0008F560 /* PBXTargetDependency */,
 			);
-			name = "Launcher TestTests";
+			name = PagedCollectionGridLayoutTests;
 			productName = "Launcher TestTests";
-			productReference = 2CD6EEA11794A75D0008F560 /* Launcher TestTests.xctest */;
+			productReference = 2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -210,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CD6EE7B1794A75D0008F560 /* Build configuration list for PBXProject "Launcher Test" */;
+			buildConfigurationList = 2CD6EE7B1794A75D0008F560 /* Build configuration list for PBXProject "PagedCollectionGridLayout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -223,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CD6EE7F1794A75D0008F560 /* Launcher Test */,
-				2CD6EEA01794A75D0008F560 /* Launcher TestTests */,
+				2CD6EE7F1794A75D0008F560 /* PagedCollectionGridLayout */,
+				2CD6EEA01794A75D0008F560 /* PagedCollectionGridLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,7 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD6EEAF1794A75D0008F560 /* Launcher_TestTests.m in Sources */,
+				2CD6EEAF1794A75D0008F560 /* PagedCollectionGridLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +277,7 @@
 /* Begin PBXTargetDependency section */
 		2CD6EEA71794A75D0008F560 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CD6EE7F1794A75D0008F560 /* Launcher Test */;
+			target = 2CD6EE7F1794A75D0008F560 /* PagedCollectionGridLayout */;
 			targetProxy = 2CD6EEA61794A75D0008F560 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -382,9 +384,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/Launcher Test-Prefix.pch";
-				INFOPLIST_FILE = "Launcher Test/Launcher Test-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Launcher Test/PagedCollectionGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "Launcher Test/PagedCollectionGridLayout-Info.plist";
+				PRODUCT_NAME = PagedCollectionGridLayout;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -395,9 +397,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/Launcher Test-Prefix.pch";
-				INFOPLIST_FILE = "Launcher Test/Launcher Test-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Launcher Test/PagedCollectionGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "Launcher Test/PagedCollectionGridLayout-Info.plist";
+				PRODUCT_NAME = PagedCollectionGridLayout;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -417,8 +419,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Launcher TestTests/Launcher TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Launcher TestTests/PagedCollectionGridLayoutTests-Info.plist";
+				PRODUCT_NAME = PagedCollectionGridLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -435,8 +437,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Launcher Test/Launcher Test-Prefix.pch";
-				INFOPLIST_FILE = "Launcher TestTests/Launcher TestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Launcher TestTests/PagedCollectionGridLayoutTests-Info.plist";
+				PRODUCT_NAME = PagedCollectionGridLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -445,7 +447,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CD6EE7B1794A75D0008F560 /* Build configuration list for PBXProject "Launcher Test" */ = {
+		2CD6EE7B1794A75D0008F560 /* Build configuration list for PBXProject "PagedCollectionGridLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD6EEB01794A75D0008F560 /* Debug */,
@@ -454,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CD6EEB21794A75D0008F560 /* Build configuration list for PBXNativeTarget "Launcher Test" */ = {
+		2CD6EEB21794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD6EEB31794A75D0008F560 /* Debug */,
@@ -463,7 +465,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "Launcher TestTests" */ = {
+		2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD6EEB61794A75D0008F560 /* Debug */,

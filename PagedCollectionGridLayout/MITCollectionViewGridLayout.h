@@ -16,8 +16,7 @@ extern NSString* const MITCollectionKindItemBadge;
 @interface MITCollectionViewGridLayout : UICollectionViewLayout
 @property (nonatomic) UIEdgeInsets contentInsets;
 
-@property (nonatomic) CGFloat minimumInterItemSpacingX;
-@property (nonatomic) CGFloat minimumInterItemSpacingY;
+@property (nonatomic) CGSize minimumInterItemSpacing;
 
 /** The size of each cell in the view. */
 @property (nonatomic) CGSize referenceItemSize;
