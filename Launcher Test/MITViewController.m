@@ -19,13 +19,16 @@
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.bounces = YES;
     self.collectionView.alwaysBounceHorizontal = YES;
+    self.collectionView.alwaysBounceVertical = NO;
     
     MITCollectionViewGridLayout *gridLayout = (MITCollectionViewGridLayout*)self.collectionView.collectionViewLayout;
-    gridLayout.minimumInterItemSpacingX = 10.;
-    gridLayout.minimumInterItemSpacingY = 10.;
+    gridLayout.minimumInterItemSpacingX = 8.;
+    gridLayout.minimumInterItemSpacingY = 8.;
     gridLayout.referenceHeaderHeight = 48.;
-    gridLayout.referenceFooterHeight = 48.;
+    gridLayout.referenceFooterHeight = 0.;
+    gridLayout.referenceItemSize = CGSizeMake(60, 90);
     
     
     [self.collectionView registerClass:[UICollectionViewCell class]
