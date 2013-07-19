@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>42E6917B-70BD-4C55-A1EB-F5571CAC6FA5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PagedCollectionGridLayout</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7CF5C70C-50FC-429F-8021-26C0D0BDBDE9</key>
+		<string>dominion:/Users/bskinner/Repositories/MIT/Launcher%20Test</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PagedCollectionGridLayout.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7CF5C70C-50FC-429F-8021-26C0D0BDBDE9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>dominion:/Users/bskinner/Repositories/MIT/Launcher%20Test</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7CF5C70C-50FC-429F-8021-26C0D0BDBDE9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7CF5C70C-50FC-429F-8021-26C0D0BDBDE9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PagedCollectionGridLayout</string>
+		</dict>
+	</array>
+</dict>
+</plist>

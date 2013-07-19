@@ -30,7 +30,7 @@
 			containerPortal = 2CD6EE781794A75D0008F560 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2CD6EE7F1794A75D0008F560;
-			remoteInfo = "Launcher Test";
+			remoteInfo = "PagedCollectionGridLayout";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -126,7 +126,7 @@
 				2CD6EE8A1794A75D0008F560 /* Supporting Files */,
 			);
 			name = "Paged Collection Grid Layout";
-			path = "Launcher Test";
+			path = "PagedCollectionGridLayout";
 			sourceTree = "<group>";
 		};
 		2CD6EE8A1794A75D0008F560 /* Supporting Files */ = {
@@ -147,7 +147,7 @@
 				2CD6EEA91794A75D0008F560 /* Supporting Files */,
 			);
 			name = "Paged Collection Grid Layout Tests";
-			path = "Launcher TestTests";
+			path = "PagedCollectionGridLayoutTests";
 			sourceTree = "<group>";
 		};
 		2CD6EEA91794A75D0008F560 /* Supporting Files */ = {
@@ -175,7 +175,7 @@
 			dependencies = (
 			);
 			name = PagedCollectionGridLayout;
-			productName = "Launcher Test";
+			productName = "PagedCollectionGridLayout";
 			productReference = 2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -193,7 +193,7 @@
 				2CD6EEA71794A75D0008F560 /* PBXTargetDependency */,
 			);
 			name = PagedCollectionGridLayoutTests;
-			productName = "Launcher TestTests";
+			productName = "PagedCollectionGridLayoutTests";
 			productReference = 2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -384,8 +384,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/PagedCollectionGridLayout-Prefix.pch";
-				INFOPLIST_FILE = "Launcher Test/PagedCollectionGridLayout-Info.plist";
+				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "PagedCollectionGridLayout/PagedCollectionGridLayout-Info.plist";
 				PRODUCT_NAME = PagedCollectionGridLayout;
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,8 +397,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/PagedCollectionGridLayout-Prefix.pch";
-				INFOPLIST_FILE = "Launcher Test/PagedCollectionGridLayout-Info.plist";
+				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "PagedCollectionGridLayout/PagedCollectionGridLayout-Info.plist";
 				PRODUCT_NAME = PagedCollectionGridLayout;
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,19 +407,19 @@
 		2CD6EEB61794A75D0008F560 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Launcher Test.app/Launcher Test";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCollectionGridLayout.app/PagedCollectionGridLayout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/Launcher Test-Prefix.pch";
+				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Launcher TestTests/PagedCollectionGridLayoutTests-Info.plist";
+				INFOPLIST_FILE = "PagedCollectionGridLayoutTests/PagedCollectionGridLayoutTests-Info.plist";
 				PRODUCT_NAME = PagedCollectionGridLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -429,15 +429,15 @@
 		2CD6EEB71794A75D0008F560 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Launcher Test.app/Launcher Test";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCollectionGridLayout.app/PagedCollectionGridLayout";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Launcher Test/Launcher Test-Prefix.pch";
-				INFOPLIST_FILE = "Launcher TestTests/PagedCollectionGridLayoutTests-Info.plist";
+				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
+				INFOPLIST_FILE = "PagedCollectionGridLayoutTests/PagedCollectionGridLayoutTests-Info.plist";
 				PRODUCT_NAME = PagedCollectionGridLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
