@@ -19,6 +19,8 @@
     [super viewDidLoad];
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.alwaysBounceHorizontal = YES;
+    
     MITCollectionViewGridLayout *gridLayout = (MITCollectionViewGridLayout*)self.collectionView.collectionViewLayout;
     gridLayout.minimumInterItemSpacingX = 10.;
     gridLayout.minimumInterItemSpacingY = 10.;
@@ -39,15 +41,15 @@
 
     
     NSMutableArray *viewContent = [[NSMutableArray alloc] init];
-    NSUInteger colorDelta = 8;
+    NSUInteger colorDelta = 16;
     
     for (int i = 0; i < (colorDelta * 3); ++i) {
         CGFloat channel = 1. / ((i % colorDelta) + 1.);
         
-        switch (i / colorDelta) {
+        switch ((i / colorDelta) % 3) {
             case 0:
                 [viewContent addObject:[UIColor colorWithRed:channel
-                                                       green:1. - channel
+                                                       green:0
                                                         blue:0
                                                        alpha:1]];
                 break;

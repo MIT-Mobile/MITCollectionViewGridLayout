@@ -19,6 +19,7 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";      // @{<key
     CGSize _cachedPageSize;
     CGSize _numberOfPages;
     NSMutableDictionary *_cachedLayoutAttributes;
+    BOOL _headersInvalidatedLayout;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -47,6 +48,7 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";      // @{<key
     _referenceItemSize = CGSizeMake(64, 88);
     _referenceHeaderHeight = 0;
     _referenceFooterHeight = 0;
+    _headersInvalidatedLayout = NO;
     
     _cachedCollectionViewContentSize = CGSizeZero;
     _cachedPageSize = CGSizeZero;
@@ -200,19 +202,18 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";      // @{<key
                                                                     atIndexPath:(NSIndexPath *)indexPath
 {
     CGPoint contentOffset = self.collectionView.contentOffset;
-    CGFloat page = round(contentOffset.x / _cachedPageSize.width);
     
     if ([MITCollectionKindSectionHeader isEqualToString:kind]) {
         UICollectionViewLayoutAttributes *headerAttributes = _cachedLayoutAttributes[MITCollectionKindSectionHeader];
         if (headerAttributes) {
-            headerAttributes.transform = CGAffineTransformMakeTranslation(page * _cachedPageSize.width, 0);
+            headerAttributes.transform = CGAffineTransformMakeTranslation(contentOffset.x, 0);
         }
         
         return headerAttributes;
     } else if ([MITCollectionKindSectionFooter isEqualToString:kind]) {
         UICollectionViewLayoutAttributes *footerAttributes = _cachedLayoutAttributes[MITCollectionKindSectionFooter];
         if (footerAttributes) {
-            footerAttributes.transform = CGAffineTransformMakeTranslation(page * _cachedPageSize.width, 0);
+            footerAttributes.transform = CGAffineTransformMakeTranslation(contentOffset.x, 0);
         }
         return footerAttributes;
     } else {
@@ -224,11 +225,10 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";      // @{<key
 {
     CGPoint contentOffset = self.collectionView.contentOffset;
     NSMutableArray *layoutAttributesInRect = [[NSMutableArray alloc] init];
-    CGFloat page = round(contentOffset.x / _cachedPageSize.width);
     
     UICollectionViewLayoutAttributes *headerAttributes = _cachedLayoutAttributes[MITCollectionKindSectionHeader];
     if (headerAttributes) {
-        headerAttributes.transform = CGAffineTransformMakeTranslation(page * _cachedPageSize.width, 0);
+        headerAttributes.transform = CGAffineTransformMakeTranslation(contentOffset.x, 0);
         [layoutAttributesInRect addObject:headerAttributes];
     }
     
@@ -246,6 +246,11 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";      // @{<key
     }
     
     return layoutAttributesInRect;
+}
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
+{
+    return YES;
 }
 
 #pragma mark - Property Implementations
