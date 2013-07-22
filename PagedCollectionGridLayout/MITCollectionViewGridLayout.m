@@ -1,6 +1,5 @@
 //
 //  MITPagedFlowLayout.m
-//  Launcher Test
 //
 //  Created by Blake Skinner on 2013/07/15.
 //  Copyright (c) 2013 MIT. All rights reserved.
@@ -17,14 +16,18 @@ const MITAxisGridLayout MITAxisGridLayoutZero = {.spacing = 0., .numberOfItems =
 
 NSString* const MITCollectionKindSectionHeader = @"MITCollectionKindSectionHeader";  // @{<key> : UICollectionViewLayoutAttributes}
 NSString* const MITCollectionKindSectionFooter = @"MITCollectionKindSectionFooter";  // @{<key> : UICollectionViewLayoutAttributes}
-NSString* const MITCollectionKindCellBadge = @"MITCollectionKindItemBadge";          // @{<key> : @{ NSIndexPath : UICollectionViewLayoutAttributes}}
+NSString* const MITCollectionKindItemBadge = @"MITCollectionKindItemBadge";          // @{<key> : @{ NSIndexPath : UICollectionViewLayoutAttributes}}
 NSString* const MITCollectionKindCell = @"MITCollectionKindCell";                    // @{<key> : @{ NSIndexPath : UICollectionViewLayoutAttributes}}
+
+NSString* const MITCollectionSectionIndexKey = @"MITCollectionSectionIndex";
+NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
 
 @implementation MITCollectionViewGridLayout
 {
     CGSize _cachedCollectionViewContentSize;
     CGSize _cachedPageSize;
     CGSize _numberOfPages;
+    
     NSMutableDictionary *_cachedLayoutAttributes;
     BOOL _headersInvalidatedLayout;
 }
@@ -68,13 +71,15 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
     
     CGRect contentBounds = CGRectMake(0, 0, _cachedPageSize.width, _cachedPageSize.height);
     
-    if (_referenceHeaderHeight > 1.) {
+    if (!_cachedLayoutAttributes[MITCollectionKindSectionHeader] && (_referenceHeaderHeight > 1.)) {
         NSIndexPath *headerIndexPath = [NSIndexPath indexPathForItem:0
                                                            inSection:0];
         UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:MITCollectionKindSectionHeader
                                                                                                                             withIndexPath:headerIndexPath];
         CGRect frame = CGRectZero;
-        CGFloat headerHeight = MIN(_referenceHeaderHeight,_cachedPageSize.height / 4.); // Limit to 25% of the view
+        
+        // Limit to 25% of the view
+        CGFloat headerHeight = MIN(_referenceHeaderHeight,_cachedPageSize.height / 4.);
         frame.size = CGSizeMake(_cachedPageSize.width, headerHeight);
         layoutAttributes.frame = frame;
         
@@ -88,13 +93,15 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
         _cachedLayoutAttributes[MITCollectionKindSectionHeader] = layoutAttributes;
     }
     
-    if (_referenceFooterHeight > 1.) {
+    if (!_cachedLayoutAttributes[MITCollectionKindSectionFooter] && (_referenceFooterHeight > 1.)) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1
                                                      inSection:0];
         UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:MITCollectionKindSectionFooter
                                                                                                                             withIndexPath:indexPath];
         CGRect frame = CGRectZero;
-        CGFloat footerHeight = MIN(_referenceFooterHeight,_cachedPageSize.height / 4.); // Limit to 25% of the view
+        
+        // Limit to 25% of the view
+        CGFloat footerHeight = MIN(_referenceFooterHeight,_cachedPageSize.height / 4.);
         frame.size = CGSizeMake(_cachedPageSize.width, footerHeight);
         frame.origin = CGPointMake(0, _cachedPageSize.height - footerHeight);
         layoutAttributes.frame = frame;
@@ -135,7 +142,7 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
             for (NSUInteger item = 0; item < numberOfItemsInSection; ++item) {
                 NSUInteger column = item % horizontalLayout.numberOfItems;
                 NSUInteger row = (item / horizontalLayout.numberOfItems) % verticalLayout.numberOfItems;
-
+                
                 if ((row == 0) && (column == 0)) {
                     frameOrigin.x = (pageCount * _cachedPageSize.width);
                     frameOrigin.y = 0;
@@ -270,25 +277,18 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds
 {
-    [self invalidateHeaderLayout];
-    return NO;
-}
-
-- (void)invalidateHeaderLayout
-{
-    _headersInvalidatedLayout = YES;
-    [_cachedLayoutAttributes removeObjectForKey:MITCollectionKindSectionHeader];
-    [_cachedLayoutAttributes removeObjectForKey:MITCollectionKindSectionFooter];
-    
-    [self invalidateLayout];
-}
-
-- (void)invalidateLayout {
-    [super invalidateLayout];
-    
-    if (!_headersInvalidatedLayout) {
-        [_cachedLayoutAttributes removeObjectForKey:MITCollectionKindCell];
+    UIScrollView *scrollView = self.collectionView;
+    UICollectionViewLayoutAttributes *headerAttributes = _cachedLayoutAttributes[MITCollectionKindSectionHeader];
+    if (headerAttributes) {
+        headerAttributes.transform = CGAffineTransformMakeTranslation(scrollView.bounds.origin.x, 0);
     }
+    
+    UICollectionViewLayoutAttributes *footerAttributes = _cachedLayoutAttributes[MITCollectionKindSectionFooter];
+    if (footerAttributes) {
+        footerAttributes.transform = CGAffineTransformMakeTranslation(scrollView.bounds.origin.x, 0);
+    }
+    
+    return YES;
 }
 
 #pragma mark - Property Implementations
