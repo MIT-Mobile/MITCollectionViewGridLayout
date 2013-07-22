@@ -22,6 +22,7 @@
 		2CD6EEA51794A75D0008F560 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EE871794A75D0008F560 /* UIKit.framework */; };
 		2CD6EEAD1794A75D0008F560 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */; };
 		2CD6EEAF1794A75D0008F560 /* PagedCollectionGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */; };
+		2CFD6B35179DD41E00E7EE77 /* MITCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD6B34179DD41E00E7EE77 /* MITCollectionViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,7 @@
 			containerPortal = 2CD6EE781794A75D0008F560 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2CD6EE7F1794A75D0008F560;
-			remoteInfo = "PagedCollectionGridLayout";
+			remoteInfo = PagedCollectionGridLayout;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,6 +57,8 @@
 		2CD6EEAA1794A75D0008F560 /* PagedCollectionGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedCollectionGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		2CD6EEAC1794A75D0008F560 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagedCollectionGridLayout.m; sourceTree = "<group>"; };
+		2CFD6B33179DD41E00E7EE77 /* MITCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITCollectionViewDataSource.h; sourceTree = "<group>"; };
+		2CFD6B34179DD41E00E7EE77 /* MITCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITCollectionViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +123,15 @@
 				2CD6EE951794A75D0008F560 /* Main.storyboard */,
 				2CD6EE981794A75D0008F560 /* MITViewController.h */,
 				2CD6EE991794A75D0008F560 /* MITViewController.m */,
+				2CFD6B33179DD41E00E7EE77 /* MITCollectionViewDataSource.h */,
+				2CFD6B34179DD41E00E7EE77 /* MITCollectionViewDataSource.m */,
 				2C5F9CFE17985990001E05E5 /* MITCollectionViewGridLayout.h */,
 				2C5F9CFF17985990001E05E5 /* MITCollectionViewGridLayout.m */,
 				2CD6EE9B1794A75D0008F560 /* Images.xcassets */,
 				2CD6EE8A1794A75D0008F560 /* Supporting Files */,
 			);
 			name = "Paged Collection Grid Layout";
-			path = "PagedCollectionGridLayout";
+			path = PagedCollectionGridLayout;
 			sourceTree = "<group>";
 		};
 		2CD6EE8A1794A75D0008F560 /* Supporting Files */ = {
@@ -147,7 +152,7 @@
 				2CD6EEA91794A75D0008F560 /* Supporting Files */,
 			);
 			name = "Paged Collection Grid Layout Tests";
-			path = "PagedCollectionGridLayoutTests";
+			path = PagedCollectionGridLayoutTests;
 			sourceTree = "<group>";
 		};
 		2CD6EEA91794A75D0008F560 /* Supporting Files */ = {
@@ -175,7 +180,7 @@
 			dependencies = (
 			);
 			name = PagedCollectionGridLayout;
-			productName = "PagedCollectionGridLayout";
+			productName = PagedCollectionGridLayout;
 			productReference = 2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -193,7 +198,7 @@
 				2CD6EEA71794A75D0008F560 /* PBXTargetDependency */,
 			);
 			name = PagedCollectionGridLayoutTests;
-			productName = "PagedCollectionGridLayoutTests";
+			productName = PagedCollectionGridLayoutTests;
 			productReference = 2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -261,6 +266,7 @@
 				2C5F9D0017985990001E05E5 /* MITCollectionViewGridLayout.m in Sources */,
 				2CD6EE901794A75D0008F560 /* main.m in Sources */,
 				2CD6EE941794A75D0008F560 /* MITAppDelegate.m in Sources */,
+				2CFD6B35179DD41E00E7EE77 /* MITCollectionViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
