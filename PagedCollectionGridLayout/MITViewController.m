@@ -31,7 +31,7 @@
     gridLayout.minimumInterItemSpacing = CGSizeMake(8.,8.);
     gridLayout.referenceHeaderHeight = 48.;
     gridLayout.referenceFooterHeight = 48.;
-    gridLayout.referenceItemSize = CGSizeMake(60., 90.);
+    gridLayout.referenceItemSize = CGSizeMake(64., 64.);
     
     
     [self.collectionView registerClass:[UICollectionViewCell class]
