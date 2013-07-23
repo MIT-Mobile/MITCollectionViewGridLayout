@@ -23,7 +23,14 @@ extern NSString* const MITCollectionKindFloatingFooter;
  */
 @property (nonatomic) CGSize minimumInterItemSpacing;
 
-/** The size of each cell in the view. */
+/** The size of each cell in the view. Setting this
+ *  to a size with 0 in either (or both) dimension,
+ *  will result in undefined behavior.
+ *
+ *  If a full-page cell is needed, assign a
+ *  CGSize object with its width and height set
+ *  to CGFLOAT_MAX.
+ */
 @property (nonatomic) CGSize referenceItemSize;
 
 /** Size of the header. If the size is set to '0',
