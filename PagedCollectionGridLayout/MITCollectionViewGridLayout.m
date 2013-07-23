@@ -7,9 +7,9 @@ typedef struct {
 
 const MITAxisGridLayout MITAxisGridLayoutZero = {.spacing = 0., .numberOfItems = 0};
 
-NSString* const MITCollectionKindFloatingHeader = @"MITCollectionKindFloatingHeader";  // @{<key> : UICollectionViewLayoutAttributes}
-NSString* const MITCollectionKindFloatingFooter = @"MITCollectionKindFloatingFooter";  // @{<key> : UICollectionViewLayoutAttributes}
-NSString* const MITCollectionKindCell = @"MITCollectionKindCell";                    // @{<key> : @{ NSIndexPath : UICollectionViewLayoutAttributes}}
+NSString* const MITCollectionKindFloatingHeader = @"MITCollectionKindFloatingHeader";
+NSString* const MITCollectionKindFloatingFooter = @"MITCollectionKindFloatingFooter";
+NSString* const MITCollectionKindCell = @"MITCollectionKindCell";
 
 NSString* const MITCollectionSectionIndexKey = @"MITCollectionSectionIndex";
 NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
