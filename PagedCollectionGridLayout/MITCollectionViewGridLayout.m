@@ -26,7 +26,9 @@ NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
 {
     CGSize _cachedCollectionViewContentSize;
     CGSize _cachedPageSize;
-    CGSize _numberOfPages;
+    
+    NSMutableArray *_cachedPageLayouts;
+    NSMutableArray *_cachedSectionHeaders;
     
     NSMutableDictionary *_cachedLayoutAttributes;
     BOOL _headersInvalidatedLayout;
@@ -63,11 +65,13 @@ NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
     _cachedCollectionViewContentSize = CGSizeZero;
     _cachedPageSize = CGSizeZero;
     _cachedLayoutAttributes = [[NSMutableDictionary alloc] init];
+    
+    _cachedPageLayouts = [[NSMutableArray alloc] init];
+    _cachedSectionHeaders = [[NSMutableArray alloc] init];
 }
 
 - (void)prepareLayout
 {
-    _cachedPageSize = self.collectionView.bounds.size;
     
     CGRect contentBounds = CGRectMake(0, 0, _cachedPageSize.width, _cachedPageSize.height);
     
@@ -171,6 +175,76 @@ NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
         _cachedCollectionViewContentSize.height = _cachedPageSize.height;
         _cachedCollectionViewContentSize.width = _cachedPageSize.width + (MAX(pageCount - 1, 0) * _cachedPageSize.width);
     }
+}
+
+- (void)prepareLayoutV2
+{
+    _cachedPageSize = self.collectionView.bounds.size;
+    
+    CGRect itemContentBounds = self.collectionView.bounds;
+    
+    if (_referenceHeaderHeight > 1.) {
+        itemContentBounds.origin.y += _referenceHeaderHeight;
+        itemContentBounds.size.height -= _referenceHeaderHeight;
+    }
+    
+    if (_referenceFooterHeight > 1.) {
+        itemContentBounds.size.height -= _referenceFooterHeight;
+    }
+    
+    itemContentBounds = UIEdgeInsetsInsetRect(itemContentBounds, _contentInsets);
+    
+    if ([_cachedPageLayouts count] == 0) {
+        CGSize itemSize = CGSizeMake(MIN(_referenceItemSize.width,CGRectGetWidth(itemContentBounds)),
+                                     MIN(_referenceItemSize.height,CGRectGetHeight(itemContentBounds)));
+        
+        
+        MITAxisGridLayout horizontalLayout = [self axisGridLayoutForWidth:CGRectGetWidth(itemContentBounds)
+                                                                itemWidth:itemSize.width
+                                                         interItemSpacing:_minimumInterItemSpacing.width];
+        MITAxisGridLayout verticalLayout = [self axisGridLayoutForWidth:CGRectGetHeight(itemContentBounds)
+                                                              itemWidth:itemSize.height
+                                                       interItemSpacing:_minimumInterItemSpacing.height];
+        NSUInteger pageCount = 0;
+        NSUInteger numberOfSections = [self.collectionView numberOfSections];
+        
+        for (NSUInteger section = 0; section < numberOfSections; ++section) {
+            NSMutableDictionary *pageMetadata = [[NSMutableDictionary alloc] init];
+            NSMutableDictionary *pageLayoutAttributes = [[NSMutableDictionary alloc] init];
+            
+            NSUInteger numberOfItemsInSection = [self.collectionView numberOfItemsInSection:section];
+            CGPoint frameOrigin = CGPointZero;
+            
+            for (NSUInteger item = 0; item < numberOfItemsInSection; ++item) {
+                NSUInteger column = item % horizontalLayout.numberOfItems;
+                NSUInteger row = (item / horizontalLayout.numberOfItems) % verticalLayout.numberOfItems;
+                
+                if ((row == 0) && (column == 0)) {
+                    frameOrigin.x = (pageCount * _cachedPageSize.width);
+                    frameOrigin.y = 0;
+                    ++pageCount;
+                }
+                
+                CGPoint cellOrigin = CGPointMake(column * (itemSize.width + horizontalLayout.spacing),
+                                                 row * (itemSize.height + verticalLayout.spacing));
+                cellOrigin.x += CGRectGetMinX(itemContentBounds) + frameOrigin.x;
+                cellOrigin.y += CGRectGetMinY(itemContentBounds) + frameOrigin.y;
+                
+                CGRect cellFrame = CGRectZero;
+                cellFrame.origin = cellOrigin;
+                cellFrame.size = itemSize;
+                
+                NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item
+                                                             inSection:section];
+                UICollectionViewLayoutAttributes *layoutAttributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+                layoutAttributes.frame = cellFrame;
+                
+                NSMutableDictionary *cellsLayoutAttributes = _cachedLayoutAttributes[MITCollectionKindCell];
+                pageLayoutAttributes[indexPath] = layoutAttributes;
+            }
+        }
+    }
+    
 }
 
 - (MITAxisGridLayout)axisGridLayoutForWidth:(CGFloat)maxWidth
