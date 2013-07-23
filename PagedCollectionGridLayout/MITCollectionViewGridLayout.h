@@ -15,19 +15,26 @@ extern NSString* const MITCollectionKindFloatingFooter;
 @interface MITCollectionViewGridLayout : UICollectionViewLayout
 @property (nonatomic) UIEdgeInsets contentInsets;
 
+/** The minimum amount of spacing between cells. The
+ *  value of 'width' is used as horizontal spacing and
+ *  'height' defined the vertical spacing. The actual
+ *  spacing may be larger depending on the number and size
+ *  of the cells and thefloating views.
+ */
 @property (nonatomic) CGSize minimumInterItemSpacing;
 
 /** The size of each cell in the view. */
 @property (nonatomic) CGSize referenceItemSize;
 
-/** Size of the header. If the size is set to CGSizeZero,
- a header will not be added. Both dimensions will be bounded
- to the current page size; specifying CGFLOAT_MAX, for example,
- will maximize the size in a given dimension.
+/** Size of the header. If the size is set to '0',
+ a header will not be added. The maximum height of the header
+ is limited to 25% of the collection view's bounds' height.
  */
 @property (nonatomic) CGFloat referenceHeaderHeight;
 
-/** Desired height of the footer
+/** Desired height of the footer. If the size is set to '0',
+ a header will not be added. The maximum height of the footer
+ is limited to 25% of the collection view's bounds' height.
  */
 @property (nonatomic) CGFloat referenceFooterHeight;
 
