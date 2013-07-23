@@ -1,11 +1,3 @@
-//
-//  MITCollectionViewDataSource.m
-//  PagedCollectionGridLayout
-//
-//  Created by Blake Skinner on 2013/07/22.
-//  Copyright (c) 2013 MIT. All rights reserved.
-//
-
 #import "MITCollectionViewDataSource.h"
 #import "MITCollectionViewGridLayout.h"
 
