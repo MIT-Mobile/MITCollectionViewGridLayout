@@ -22,6 +22,18 @@ NSString* const MITCollectionKindCell = @"MITCollectionKindCell";               
 NSString* const MITCollectionSectionIndexKey = @"MITCollectionSectionIndex";
 NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
 
+@interface NSIndexPath (MITCollectionViewGridLayout)
++ (NSIndexPath*)indexPathForPage:(NSInteger)page inSection:(NSInteger)section;
+@end
+
+
+/* Caching Scheme:
+ *  @[<Section> : @[ @{"MITPagedGridLayoutKindCell"          : @{"NSIndexPath" : "UICollectionViewLayoutAttributes"},
+ *                      "MITPagedGridLayoutKindSectionHeader" : "UICollectionViewLayoutAttributes",
+ *                      "MITPagedGridLayoutKindSectionFooter" : "UICollectionViewLayoutAttributes",
+ *                      "MITPagedGridLayoutKindBadge"         : {"NSIndexPath" : "UICollectionViewLayoutAttributes"}
+ *     }]
+ */
 @implementation MITCollectionViewGridLayout
 {
     CGSize _cachedCollectionViewContentSize;
@@ -176,6 +188,13 @@ NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
         _cachedCollectionViewContentSize.width = _cachedPageSize.width + (MAX(pageCount - 1, 0) * _cachedPageSize.width);
     }
 }
+
+- (NSArray*)layoutAttributesForHeadersAtIndexPaths:(NSSet*)indexPaths
+{
+    
+}
+
+- (NSArray*)layoutAttributesForCells
 
 - (void)prepareLayoutV2
 {
@@ -388,6 +407,27 @@ NSString* const MITCollectionPageLayoutKey = @"MITCollectionPageLayout";
 {
     _referenceFooterHeight = referenceFooterHeight;
     [self invalidateLayout];
+}
+
+@end
+
+@implementation NSIndexPath (MITCollectionViewGridLayout)
++ (NSIndexPath*)indexPathForPage:(NSInteger)page
+                       inSection:(NSInteger)section
+{
+    NSUInteger indicies[] = {section,page};
+    return [[NSIndexPath alloc] initWithIndexes:indicies
+                                         length:2];
+}
+
+- (NSUInteger)mit_section
+{
+    return [self indexAtPosition:0];
+}
+
+- (NSUInteger)page
+{
+    return [self indexAtPosition:1];
 }
 
 @end
