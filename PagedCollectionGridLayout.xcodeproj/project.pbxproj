@@ -17,23 +17,8 @@
 		2CD6EE971794A75D0008F560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EE951794A75D0008F560 /* Main.storyboard */; };
 		2CD6EE9A1794A75D0008F560 /* MITViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6EE991794A75D0008F560 /* MITViewController.m */; };
 		2CD6EE9C1794A75D0008F560 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EE9B1794A75D0008F560 /* Images.xcassets */; };
-		2CD6EEA31794A75D0008F560 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EEA21794A75D0008F560 /* XCTest.framework */; };
-		2CD6EEA41794A75D0008F560 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EE831794A75D0008F560 /* Foundation.framework */; };
-		2CD6EEA51794A75D0008F560 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD6EE871794A75D0008F560 /* UIKit.framework */; };
-		2CD6EEAD1794A75D0008F560 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */; };
-		2CD6EEAF1794A75D0008F560 /* PagedCollectionGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */; };
 		2CFD6B35179DD41E00E7EE77 /* MITCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD6B34179DD41E00E7EE77 /* MITCollectionViewDataSource.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2CD6EEA61794A75D0008F560 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2CD6EE781794A75D0008F560 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CD6EE7F1794A75D0008F560;
-			remoteInfo = PagedCollectionGridLayout;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C5F9CFE17985990001E05E5 /* MITCollectionViewGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITCollectionViewGridLayout.h; sourceTree = "<group>"; };
@@ -52,11 +37,7 @@
 		2CD6EE981794A75D0008F560 /* MITViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MITViewController.h; sourceTree = "<group>"; };
 		2CD6EE991794A75D0008F560 /* MITViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MITViewController.m; sourceTree = "<group>"; };
 		2CD6EE9B1794A75D0008F560 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagedCollectionGridLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD6EEA21794A75D0008F560 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2CD6EEAA1794A75D0008F560 /* PagedCollectionGridLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedCollectionGridLayoutTests-Info.plist"; sourceTree = "<group>"; };
-		2CD6EEAC1794A75D0008F560 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagedCollectionGridLayout.m; sourceTree = "<group>"; };
 		2CFD6B33179DD41E00E7EE77 /* MITCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MITCollectionViewDataSource.h; sourceTree = "<group>"; };
 		2CFD6B34179DD41E00E7EE77 /* MITCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MITCollectionViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,16 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2CD6EE9E1794A75D0008F560 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2CD6EEA31794A75D0008F560 /* XCTest.framework in Frameworks */,
-				2CD6EEA51794A75D0008F560 /* UIKit.framework in Frameworks */,
-				2CD6EEA41794A75D0008F560 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				2CD6EE891794A75D0008F560 /* Paged Collection Grid Layout */,
-				2CD6EEA81794A75D0008F560 /* Paged Collection Grid Layout Tests */,
 				2CD6EE821794A75D0008F560 /* Frameworks */,
 				2CD6EE811794A75D0008F560 /* Products */,
 			);
@@ -99,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */,
-				2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,25 +114,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2CD6EEA81794A75D0008F560 /* Paged Collection Grid Layout Tests */ = {
-			isa = PBXGroup;
-			children = (
-				2CD6EEAE1794A75D0008F560 /* PagedCollectionGridLayout.m */,
-				2CD6EEA91794A75D0008F560 /* Supporting Files */,
-			);
-			name = "Paged Collection Grid Layout Tests";
-			path = PagedCollectionGridLayoutTests;
-			sourceTree = "<group>";
-		};
-		2CD6EEA91794A75D0008F560 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2CD6EEAA1794A75D0008F560 /* PagedCollectionGridLayoutTests-Info.plist */,
-				2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,24 +134,6 @@
 			productReference = 2CD6EE801794A75D0008F560 /* PagedCollectionGridLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CD6EEA01794A75D0008F560 /* PagedCollectionGridLayoutTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayoutTests" */;
-			buildPhases = (
-				2CD6EE9D1794A75D0008F560 /* Sources */,
-				2CD6EE9E1794A75D0008F560 /* Frameworks */,
-				2CD6EE9F1794A75D0008F560 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2CD6EEA71794A75D0008F560 /* PBXTargetDependency */,
-			);
-			name = PagedCollectionGridLayoutTests;
-			productName = PagedCollectionGridLayoutTests;
-			productReference = 2CD6EEA11794A75D0008F560 /* PagedCollectionGridLayoutTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,11 +143,6 @@
 				CLASSPREFIX = MIT;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = MIT;
-				TargetAttributes = {
-					2CD6EEA01794A75D0008F560 = {
-						TestTargetID = 2CD6EE7F1794A75D0008F560;
-					};
-				};
 			};
 			buildConfigurationList = 2CD6EE7B1794A75D0008F560 /* Build configuration list for PBXProject "PagedCollectionGridLayout" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -231,7 +158,6 @@
 			projectRoot = "";
 			targets = (
 				2CD6EE7F1794A75D0008F560 /* PagedCollectionGridLayout */,
-				2CD6EEA01794A75D0008F560 /* PagedCollectionGridLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,14 +170,6 @@
 				2CD6EE9C1794A75D0008F560 /* Images.xcassets in Resources */,
 				2CD6EE8E1794A75D0008F560 /* InfoPlist.strings in Resources */,
 				2CD6EE971794A75D0008F560 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2CD6EE9F1794A75D0008F560 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2CD6EEAD1794A75D0008F560 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,23 +188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2CD6EE9D1794A75D0008F560 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2CD6EEAF1794A75D0008F560 /* PagedCollectionGridLayout.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2CD6EEA71794A75D0008F560 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2CD6EE7F1794A75D0008F560 /* PagedCollectionGridLayout */;
-			targetProxy = 2CD6EEA61794A75D0008F560 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2CD6EE8C1794A75D0008F560 /* InfoPlist.strings */ = {
@@ -303,14 +205,6 @@
 				2CD6EE961794A75D0008F560 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2CD6EEAB1794A75D0008F560 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CD6EEAC1794A75D0008F560 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -410,46 +304,6 @@
 			};
 			name = Release;
 		};
-		2CD6EEB61794A75D0008F560 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCollectionGridLayout.app/PagedCollectionGridLayout";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PagedCollectionGridLayoutTests/PagedCollectionGridLayoutTests-Info.plist";
-				PRODUCT_NAME = PagedCollectionGridLayoutTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		2CD6EEB71794A75D0008F560 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PagedCollectionGridLayout.app/PagedCollectionGridLayout";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP3.app/Contents/Developer/Library/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedCollectionGridLayout/PagedCollectionGridLayout-Prefix.pch";
-				INFOPLIST_FILE = "PagedCollectionGridLayoutTests/PagedCollectionGridLayoutTests-Info.plist";
-				PRODUCT_NAME = PagedCollectionGridLayoutTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,15 +321,6 @@
 			buildConfigurations = (
 				2CD6EEB31794A75D0008F560 /* Debug */,
 				2CD6EEB41794A75D0008F560 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2CD6EEB51794A75D0008F560 /* Build configuration list for PBXNativeTarget "PagedCollectionGridLayoutTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2CD6EEB61794A75D0008F560 /* Debug */,
-				2CD6EEB71794A75D0008F560 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
