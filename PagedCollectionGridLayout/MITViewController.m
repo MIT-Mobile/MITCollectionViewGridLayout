@@ -38,11 +38,11 @@
             forCellWithReuseIdentifier:@"ModuleCell"];
     
     [self.collectionView registerClass:[UICollectionReusableView class]
-            forSupplementaryViewOfKind:MITCollectionKindSectionHeader
+            forSupplementaryViewOfKind:MITCollectionKindFloatingHeader
                    withReuseIdentifier:@"HeaderView"];
     
     [self.collectionView registerClass:[UICollectionReusableView class]
-            forSupplementaryViewOfKind:MITCollectionKindSectionFooter
+            forSupplementaryViewOfKind:MITCollectionKindFloatingFooter
                    withReuseIdentifier:@"FooterView"];
     
     _dataSource = [[MITCollectionViewDataSource alloc] init];

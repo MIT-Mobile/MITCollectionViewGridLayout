@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-extern NSString* const MITCollectionKindSectionHeader;
-extern NSString* const MITCollectionKindSectionFooter;
-extern NSString* const MITCollectionKindItemBadge;
+extern NSString* const MITCollectionKindFloatingHeader;
+extern NSString* const MITCollectionKindFloatingFooter;
 
 @protocol MITCollectionViewDelegateGridLayout;
 

@@ -79,12 +79,12 @@
 {
     UICollectionReusableView *reusableView = nil;
     
-    if ([kind isEqualToString:MITCollectionKindSectionHeader]) {
+    if ([kind isEqualToString:MITCollectionKindFloatingHeader]) {
         reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                           withReuseIdentifier:@"HeaderView"
                                                                  forIndexPath:indexPath];
         reusableView.backgroundColor = [UIColor purpleColor];
-    } else if ([kind isEqualToString:MITCollectionKindSectionFooter]) {
+    } else if ([kind isEqualToString:MITCollectionKindFloatingFooter]) {
         reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
                                                           withReuseIdentifier:@"FooterView"
                                                                  forIndexPath:indexPath];
